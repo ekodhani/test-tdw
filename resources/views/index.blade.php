@@ -18,8 +18,18 @@
             {{-- card content --}}
             <div class="card rounded-3">
               <div class="card-body">
+                @if(\Session::has('alert'))
+                  <div class="alert alert-danger" role="alert">
+                    {{ Session::get('alert') }}
+                  </div>
+                @endif
+                @if(\Session::has('alert-success'))
+                  <div class="alert alert-primary" role="alert">
+                    {{ Session::get('alert-success') }}
+                  </div>
+                @endif
                 <h3 class="card-title text-center">Login</h3>
-                <form action="">
+                <form action="{{ url('/loginPost') }}" method="post">
                   <div class="form-floating mb-3">
                     <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
                     <label for="floatingInput">Email address</label>

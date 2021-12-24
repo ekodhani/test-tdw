@@ -19,7 +19,7 @@
             <div class="card rounded-3">
               <div class="card-body">
                 <h3 class="card-title text-center">Signup</h3>
-                <form action="">
+                <form action="{{ url('/registerPost') }}" method="post">
                   <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="floatingInput" placeholder="John Doe" name="nama">
                     <label for="floatingInput">Nama Lengkap</label>
@@ -33,9 +33,9 @@
                     <label for="floatingPassword">Password</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                      <option value="1">Admin</option>
-                      <option value="2">Member</option>
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="role">
+                      <option value="Admin">Admin</option>
+                      <option value="Member">Member</option>
                     </select>
                     <label for="floatingSelect">Role</label>
                   </div>
